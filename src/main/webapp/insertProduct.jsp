@@ -4,7 +4,7 @@
     
 <% 
 try {
-String sessionRole = (String) session.getAttribute("role"); 
+    String sessionRole = (String) session.getAttribute("role"); 
 
 %>
     

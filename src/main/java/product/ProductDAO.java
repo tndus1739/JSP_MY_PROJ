@@ -22,21 +22,21 @@ public class ProductDAO {
 			// insert 쿼리
 			
 			private final String PRODUCT_INSERT =
-				"insert into m_board ( id , name , price , content , regdate  ) "
-				+ "values ( (select nvl(max(id) , 0 ) + 1 from m_board ) , ? , ? , ? , ? ) " ;  
+				"insert into product ( id , name , price , content , regdate  ) "
+				+ "values ( (select nvl(max(id) , 0 ) + 1 from m_board ) , ? , ? , ? , sysdate ) " ;  
 		
 			// PRODUCT테이블의 모든 레코드를 출력하는 쿼리
 		
-			private final String PRODECT_LIST = "select * from m_board order by id desc" ;
+			private final String PRODECT_LIST = "select * from product order by id desc" ;
 			
 			// PRODUCT 테이블의 글 상세 조회 : 레코드 1개 -> 리턴으로 DTO 돌려줌
-			private final String PRODECT_GET = "select * from m_board where id = ? ";
+			private final String PRODECT_GET = "select * from product where id = ? ";
 			
 			// PRODUCT 테이블의 Update 쿼리
-			private final String PRODECT_UPDATE = "update m_board set name = ? , price = ? , content = ? , regdate = ?  where id = ? ";   // ?에 변수값 넘어옴
+			private final String PRODECT_UPDATE = "update product set name = ? , price = ? , content = ? , regdate = ?  where id = ? ";   // ?에 변수값 넘어옴
 			
 			// PRODUCT 테이블의 Delete 쿼리
-			private final String PRODECT_DELETE = "delete m_board where id = ? " ;
+			private final String PRODECT_DELETE = "delete product where id = ? " ;
 	
 			
 			// insertBoard ( ProductDTO dto ) 메소드  :
@@ -56,7 +56,7 @@ public class ProductDAO {
 						pstmt.setString(1, dto.getName());          // 위의 insertBoard 에서 dto 로 들어온 값을 getTitle로 끄집어내서 ?에 값 할당
 						pstmt.setInt(2, dto.getPrice());
 						pstmt.setString(3, dto.getContent());
-						pstmt.setDate(3, dto.getRegdate());
+						
 						
 						
 					// pstmt를 실행해서 DB에 저장

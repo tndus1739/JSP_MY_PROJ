@@ -93,15 +93,15 @@ public class Product_Controller extends HttpServlet {
 				// 2. M_BoardDAO 
 				ProductDAO dao = new ProductDAO () ;
 				// 3. 
-				List < ProductDTO>  boardList = new ArrayList <>();
+				List < ProductDTO>  productList = new ArrayList <>();
 				
-				boardList = dao.getProductList (dto); 
+				productList = dao.getProductList (dto); 
 				
 				//  Product의 session 정보를 가져와서 session 변수에 할당
 				
 				HttpSession session = request.getSession();
 				
-				session.setAttribute("boardList", boardList);
+				session.setAttribute("productList", productList);
 				
 				response.sendRedirect("getProductList.jsp");
 				

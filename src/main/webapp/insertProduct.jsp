@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
+<% 
+try {
+String sessionRole = (String) session.getAttribute("role"); 
+
+%>
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +18,22 @@
 <body>
 
 
-<!-- view 페이지 : 클라이언트에게 보여지는 페이지 -->
+<!-- view 페이지 : 관리자에게 보여지는 페이지 -->
 	<center>
 
 		<h1> 제품 등록 페이지 </h1>
 		<hr>
-		<!--form 태그안에 변수 값을 담아서 insertBoard.do 호출   -->
+		
+<% if (sessionRole.equals("admin")){
+	
+	
+	%>		
+		
+		
+		
+		
+		
+		<!--form 태그안에 변수 값을 담아서 insertProduct.pp 호출   -->
 		<form method="post" action="insertProduct.pp">
 			<!-- do 요청은 Board_Controller.java에서 받도록 설정   -->
 			<table border="1" cellpadding="10" cellspacing="0">
@@ -41,6 +60,26 @@
 
 
 		</form>
+		
+	<%
+} else {
+	
+	%>	
+		
+		당신은 admin 이 아닙니다. admin 으로 로그인해야 합니다. 
+	
+	<%
+}
+
+
+} catch (Exception e) {
+	response.sendRedirect("LoginForm.jsp"); 
+}
+
+	%>
+		
+		
+		
 
 <br> <a href="http://localhost:8181/JSP_MY_PROJ"> 홈으로 </a>
 		

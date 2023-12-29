@@ -109,6 +109,7 @@ public class M_Board_Controller extends HttpServlet {
 			//  1. client 에서 넘어오는 파라미터 id 변수의 값을 읽어서 dto에 저장 후 dao.getBoard(dto)
 			
 			int id = Integer.parseInt(request.getParameter("id")) ;
+			
 			// 2. dto에 seq 값을  setter 주입
 			M_BoardDTO dto = new M_BoardDTO () ;
 			dto.setId(id);

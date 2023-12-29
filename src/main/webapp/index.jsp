@@ -24,7 +24,7 @@
 	<p />
 	<a href="admin.jsp"> 관리자 페이지 </a>
 	<p />
-	<a href="getProducts.jsp"> 상품 등록 페이지 (관리자 접근) </a>
+	<a href="insertProduct.jsp"> 상품 등록 페이지 (관리자 접근) </a>
 	<p />
 	<a href="getProductList.do"> 상품 리스트 페이지 (관리자 접근) </a>
 	<p />

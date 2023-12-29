@@ -19,7 +19,7 @@ List<ProductDTO> ProductList = new ArrayList<>();
 
 try { // catch 블락은 마지막 밑에
 
-	ProductList = (List<ProductDTO>) session.getAttribute("ProductList"); // list 타입으로 캐스팅해줘야 함  // 바로 호출하지말고 do요청을 해야함
+	ProductList = (List<ProductDTO>) session.getAttribute("productList"); // list 타입으로 캐스팅해줘야 함  // 바로 호출하지말고 do요청을 해야함
 	// ProductList가  null 값이기 때문에 그냥 불러오면 오류가 남
 
 	// ProductList = (List<ProductDTO>) session.getAttribute("boardList"); -> <ProductDTO> 생략가능
@@ -58,7 +58,7 @@ try { // catch 블락은 마지막 밑에
 
 
 			<tr>
-				<td align="center"><%=k.getId()%></td>
+
 
 				<!--  제목에 링크를 건다 : 글 상세 내용을 볼 수 있도록 ( get title에 링크 걸기) -->
 
